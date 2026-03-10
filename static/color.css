@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --blue-dark:   #2b6a9a;
+    --blue-main:   #3779a2;
+    --blue-light:  #5bbfed;
+    --cyan:        #00e5ff;
+    --cyan-soft:   #b3eeff;
+    --table-head:  #c8e6f5;
+    --table-alt:   #f0f8ff;
+    --danger:      #e74c3c;
+    --success:     #2ecc71;
+    --white:       #ffffff;
+    --bg:          #eaf6fd;
+    --text:        #1a3a50;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+}
+
+/* ── Logo badge ── */
+.logo-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--blue-main);
+    color: white;
+    font-weight: 800;
+    font-size: 0.9rem;
+    padding: 8px 14px 8px 10px;
+    border-radius: 12px;
+    letter-spacing: 0.3px;
+}
+.logo-badge .smiley {
+    width: 34px;
+    height: 34px;
+    background: white;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.logo-badge .smiley svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* ── Pill inputs ── */
+.pill-input {
+    width: 100%;
+    padding: 12px 22px;
+    border: 2px solid var(--blue-light);
+    border-radius: 999px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color .2s, box-shadow .2s;
+    background: white;
+}
+.pill-input:focus {
+    border-color: var(--blue-main);
+    box-shadow: 0 0 0 3px rgba(55,121,162,.15);
+}
+
+/* ── Pill buttons ── */
+.pill-btn {
+    padding: 12px 32px;
+    border-radius: 999px;
+    border: none;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform .15s, box-shadow .15s;
+}
+.pill-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,.15); }
+.pill-btn:active { transform: translateY(0); }
+
+.pill-btn-primary   { background: var(--blue-main); color: white; }
+.pill-btn-cyan      { background: var(--cyan); color: var(--text); }
+.pill-btn-outline   { background: white; color: var(--blue-main); border: 2px solid var(--blue-light); }
+.pill-btn-danger    { background: var(--danger); color: white; }
+
+/* ── Banner arrow ── */
+.page-banner {
+    display: flex;
+    align-items: center;
+    background: var(--blue-main);
+    clip-path: polygon(0 0, 92% 0, 100% 50%, 92% 100%, 0 100%);
+    padding: 18px 80px 18px 24px;
+    margin: 28px 0 24px 0;
+    max-width: 680px;
+    gap: 20px;
+}
+.page-banner img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+.page-banner .banner-text {
+    color: white;
+    font-size: 1.7rem;
+    font-weight: 900;
+    line-height: 1.15;
+    letter-spacing: -0.3px;
+}
+
+/* ── Data table ── */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,.07);
+}
+.data-table th {
+    background: var(--table-head);
+    color: var(--text);
+    font-weight: 800;
+    padding: 13px 18px;
+    text-align: left;
+    font-size: 0.95rem;
+}
+.data-table td {
+    padding: 11px 18px;
+    border-bottom: 1px solid #e8f4fb;
+    font-size: 0.95rem;
+}
+.data-table tr:last-child td { border-bottom: none; }
+.data-table tr:hover td { background: var(--table-alt); }
+
+/* ── Qty badge ── */
+.qty-badge {
+    display: inline-block;
+    background: #ddeefa;
+    color: var(--blue-dark);
+    padding: 3px 14px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.88rem;
+}
+
+/* ── Back link ── */
+.back-link {
+    display: inline-block;
+    color: var(--blue-main);
+    font-weight: 700;
+    text-decoration: none;
+    border: 2px solid var(--blue-light);
+    border-radius: 999px;
+    padding: 6px 20px;
+    transition: background .2s;
+}
+.back-link:hover { background: var(--blue-light); color: white; }
+
+/* ── Top bar ── */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px 32px 0;
+}
+
+/* ── Page wrapper ── */
+.page-wrap {
+    padding: 0 32px 40px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+    .page-banner { clip-path: none; padding: 18px 24px; }
+    .page-banner .banner-text { font-size: 1.3rem; }
+}
